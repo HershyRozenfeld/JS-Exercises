@@ -27,8 +27,13 @@ function onlyEvenValues(array){
 // that are strings.
 
 function showFirstAndLast(array){
-    firstAndLastArray.push(array.shift());
-    firstAndLastArray.push(array.pop());
+    const firstAndLastArray = [];
+    if (typeof array[0] === 'string'){
+        firstAndLastArray.push(array[0]);
+    }
+    if (typeof array[array.length-1] === 'string'){
+        firstAndLastArray.push(array[array.length-1]);
+    }
     return firstAndLastArray;
 }
 
@@ -70,12 +75,24 @@ function capitalize(str){
 function shiftLetters(str){
     let shiftedStr="";
     for (const char of str){
-        srt += String.fromCharCode(char.charCodeAt(0)-1)
+        shiftedStr += String.fromCharCode(char.charCodeAt(0) - 1)
     }
     return shiftedStr;
 }
 
 // 7. Create a function called swapCase that takes a string as
 // an argument and returns a string that every other word is
-// capitalized. (you can use the fifth’s exercise&#39;s function to
+// capitalized. (you can use the fifth’s exercises function to
 // keep it dry)
+
+function toUpper(name){
+    const myName = name.toUpperCase();
+    return myName;
+}
+
+function wordsSwapCase(str){
+    return str.split(" ").map((word, index) => index % 2 === 0 ? word : word.toUpperCase()).join(" ")
+}
+
+const str = "hello world this is js";
+console.log(wordsSwapCase(str));
