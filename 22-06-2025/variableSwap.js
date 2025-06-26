@@ -1,5 +1,6 @@
-function SwapVariable(str1, str2){
-    str1.push(str2);
-    str2 = str1.shift()
-    return str1+"", str2
+function SwapVariable(a, b){
+    a = "some string";
+    b = "other string";
+    [a, b] = [b, a];
+    return(a,'\n',b);
 }
