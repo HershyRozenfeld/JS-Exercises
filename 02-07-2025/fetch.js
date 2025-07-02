@@ -108,5 +108,5 @@ function showKeys(url){
             console.log(`Keys:`,keys);
         }
     })
-}9
+}
 showKeys('https://jsonplaceholder.typicode.com/todos?userId=2')
