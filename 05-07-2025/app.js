@@ -20,4 +20,7 @@ const server = http.createServer((req, res) => {
 
 server.on('request', (req, res) => {
     console.log(`Request received: ${req.method} ${req.url}`);
+    req.on('data', chunk => {
+        console.log(`Data chunk received: ${chunk}`);
+    });
 });
